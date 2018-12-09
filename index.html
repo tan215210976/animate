@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<h1 id="showData"></h1>
+	<script>
+		var showData = document.getElementById("showData")
+		// var str = "标记我的生活"
+		var arr = ["标记我的生活", "明星生活的另一面", "全世界的好东西", "吃穿玩乐买的日常"]
+		var num = 0
+		var timerId = null;
+		var index = -1
+		// console.log(str.substr(0, 1))
+		// showData.innerText = str.substr(0, 1)
+		// showData.innerText = str.substr(1, 1)
+		// showData.innerText = str.substr(2, 1)
+		function renderData() {
+			index++
+			if (index > arr.length - 1) {
+				index = 0
+			}
+			timerId = setInterval(function () {
+				if(num >= arr[index].length) {
+					clearInterval(timerId)
+					num = 0
+					showData.innerText = ""
+					renderData()
+					return
+				}
+				showData.innerText += arr[index].substr(num, 1)
+				num++
+			}, 500)
+		}
+		renderData()
+
+	</script>
+</body>
+</html>

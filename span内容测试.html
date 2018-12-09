@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        #aa {
+            font-size: 40px;
+            font-weight: 700;
+            font-family: '微软雅黑';
+        }
+    </style>
+</head>
+<body>
+<div id="aa"></div>
+<!-- <div style="display:none" id="w">
+    标记我的生活
+</div>
+<div style="display:none" id="s">
+    明星生活的另一面
+</div>
+<div style="display:none" id="m">
+    全世界的好东西
+</div>
+<div style="display:none" id="a">
+    吃穿玩乐买的日常
+</div> -->
+<script>
+    var index = 0;
+    var num = -1;
+    var timerId = null;
+    var showWords = document.getElementById("aa")
+    var arr = ['标记我的生活', '明星生活的另一面', '全世界的好东西', '吃穿玩乐买的日常']
+    function start() {
+        num++;
+        timerId = setInterval(function (){
+            if (num < arr.length) {
+                if (showWords.innerText.length === arr[num].length) {
+                    index = 0;
+                    clearInterval(timerId);
+                    showWords.innerText = '';
+                    start();
+                    return;
+                } 
+                 showWords.innerText = arr[num].substr(0, index++);
+            } else {
+                num = 0;
+            }
+        }, 100)
+    }
+    start();
+    
+</script>
+</body>
+</html>
