@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+
+<body>
+    <h4 id="data"></h4>
+    <!-- <label for="">请输入您的QQ号</label><input type="text" id="text"></input><span></span> -->
+    <h1 id="id"></h1>
+    <script>
+        // function getRandom() {
+        // 	var random=parseInt(Math.random()*10)+1;
+        // 	return function(){
+        // 		return random;
+        // 	}
+        // }
+        // var fn=getRandom();
+        // console.log(getRandom())
+        // console.log(fn());
+        // console.log(fn());
+        // console.log(fn());
+        //    function getFun(n){
+        //    	function demo(m){
+        //    		return n+m;
+        //    	}
+        //    	return demo;
+        //    }
+        //    var fn100=getFun(100);
+        //    console.log(fn100(5))
+
+        // var heroes=document.getElementById('heroes');
+        // var list=heroeschildren;
+        // for(var i=0;i<list.length;i++){
+        // 	(function(i){
+        //         list[i].onclick=demo;
+        //         function demo(){
+        //         	console.log(i);
+        //         }
+        // 	})(i)
+        // }
+        // function getSum(n){
+        // 	if(n===1){
+        // 		return 1;
+        // 	}
+        // 	return n+getSum(n-1);
+        // }
+        // console.log(getSum(5))
+        // function getSum(n){
+        // 	if(n===1){
+        // 		return 1;
+        // 	}
+        //   return n*getSum(n-1);
+        // }
+        // console.log(getSum(3))
+        // function getSum(n){
+        // 	if(n==1||n==2){
+        // 		return 1
+        // 	}
+        //     return getSum(n-1)+getSum(n-2)
+        // }
+        // console.log(getSum(5))
+
+        var data = document.getElementById('data');
+        var num = 1;
+        var arr = ['标记我的生活', '明星生活的另一面', '全世界的好东西', '吃穿玩乐买的日常'];
+        var index = 0;
+
+        function showData() {
+            timerId = setInterval(function() {
+                data.innerText = arr[index].substr(0, num);
+                num++;
+                if (num > arr[index].length) {
+                    num = 1;
+                    index++;
+                }
+                if (index > arr.length - 1) {
+                    index = 0;
+                }
+            }, 500)
+        }
+
+        showData();
+        // var obj1={
+        // 	name:'zx',
+        // 	age:null,
+        // 	sex:undefined,
+        // 	dog:{
+        // 		name:'金毛',
+        // 		age:2,
+        // 		color:'金色'
+        // 	}
+        //  }
+        //  var obj2={};
+        //  function deepCopy(o1,o2){
+        //     for(var key in o1){
+        //       if(o1[key] instanceof Array){
+        //       	o2[key]=[];
+        //       	deepCopy(o1[key],o2[key])
+        //       }else if(o1[key] instanceof Object){
+        //       	o2[key]={};
+        //       	deepCopy(o1[key],o2[key])
+        //       }else{
+        //       	o2[key]=o1[key]
+        //       }        
+        //     }
+        //  }
+        //  deepCopy(obj1,obj2);
+        //  console.dir(obj2)
+        // var text=document.getElementById('text');
+        // text.onkeyup=function(){
+        // 	var span=this.nextElementSibling;
+        // 	  if(/^\d{5,12}$/.test(this.value)){
+        //           span.innerText=''
+        // 	  }else{
+        // 	  	span.innerText='请输入正确的格式';
+        // 	  	span.style.color='red';
+        // 	  }
+        // }
+        // var str = "123123@xx.com,fangfang@valuedopinions.cn 286669312@qq.com 2、emailenglish@emailenglish.englishtown.com 286669312@qq.com...";
+        // var reg=/\w+@\w+(\.\w+)+/g
+        // console.log(str.match(reg))
+        // var str = '<<黑马程序员>>，属于传智旗下<<高端品牌>>';
+        // // document.wirte(str);
+        // var reg = /<<[\u4e00-\u9fa5]+>>/g;
+        // console.log(str.match(reg))
+    </script>
+</body>
+
+</html>
